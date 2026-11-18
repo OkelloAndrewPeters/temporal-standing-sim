@@ -1,0 +1,592 @@
+{
+  "run_id": "run_20261118T092724Z",
+  "preregistration_file": "run_20261118T092724Z_prereg.json",
+  "preregistration_sha256": "45852d4da056e8eee2625cc49134cbae51f30964409e8bcd797a4239d223dd5a",
+  "started_at": "2026-11-18T09:27:25.196876+00:00",
+  "finished_at": "2026-11-18T09:27:26.131868+00:00",
+  "race_test": {
+    "CheckingIssuer": {
+      "runs": 1000,
+      "violations": 1000,
+      "first_run_detail": {
+        "permit_101_outcome": "ISSUED",
+        "official_was_told": "WITHDRAWN",
+        "violation": true
+      },
+      "verdict": "FAIL"
+    },
+    "LockedIssuer": {
+      "runs": 1000,
+      "violations": 0,
+      "first_run_detail": {
+        "permit_101_outcome": "ISSUED",
+        "official_was_told": "TOO LATE - already issued (official is told)",
+        "violation": false
+      },
+      "verdict": "PASS"
+    }
+  },
+  "paired_test": {
+    "ApprovalOnlyIssuer": {
+      "cases": [
+        {
+          "change_class": "approval",
+          "case": "A",
+          "change_applied": {
+            "approval": "withdrawn"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "approval",
+          "case": "B",
+          "change_applied": {
+            "approval": "approved"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "authority",
+          "case": "A",
+          "change_applied": {
+            "approver_has_authority": false
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "authority",
+          "case": "B",
+          "change_applied": {
+            "approver_office": "Room 9"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "consent",
+          "case": "A",
+          "change_applied": {
+            "landowner_consent": false
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "consent",
+          "case": "B",
+          "change_applied": {
+            "landowner_email": "new-owner-email@example.com"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "eligibility",
+          "case": "A",
+          "change_applied": {
+            "contractor_licence": "suspended"
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "eligibility",
+          "case": "B",
+          "change_applied": {
+            "contractor_address": "Plot 12"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "evidence",
+          "case": "A",
+          "change_applied": {
+            "inspection_report": "retracted"
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "evidence",
+          "case": "B",
+          "change_applied": {
+            "report_file_format": "pdf/a"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "policy",
+          "case": "A",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": false
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "policy",
+          "case": "B",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": true
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "account",
+          "case": "A",
+          "change_applied": {
+            "fee_status": "reversed"
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "account",
+          "case": "B",
+          "change_applied": {
+            "payment_method": "mobile money"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "A",
+          "change_applied": {
+            "site_in_jurisdiction": false
+          },
+          "expected": "HELD",
+          "got": "ISSUED",
+          "correct": false
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "B",
+          "change_applied": {
+            "site_parcel_label": "LR-221/A"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "control",
+          "case": "B",
+          "change_applied": {
+            "applicant_phone": "0711 111 111"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "unrelated",
+          "case": "-",
+          "change_applied": null,
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    "AnyChangeIssuer": {
+      "cases": [
+        {
+          "change_class": "approval",
+          "case": "A",
+          "change_applied": {
+            "approval": "withdrawn"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "approval",
+          "case": "B",
+          "change_applied": {
+            "approval": "approved"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "authority",
+          "case": "A",
+          "change_applied": {
+            "approver_has_authority": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "authority",
+          "case": "B",
+          "change_applied": {
+            "approver_office": "Room 9"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "consent",
+          "case": "A",
+          "change_applied": {
+            "landowner_consent": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "consent",
+          "case": "B",
+          "change_applied": {
+            "landowner_email": "new-owner-email@example.com"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "eligibility",
+          "case": "A",
+          "change_applied": {
+            "contractor_licence": "suspended"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "eligibility",
+          "case": "B",
+          "change_applied": {
+            "contractor_address": "Plot 12"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "evidence",
+          "case": "A",
+          "change_applied": {
+            "inspection_report": "retracted"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "evidence",
+          "case": "B",
+          "change_applied": {
+            "report_file_format": "pdf/a"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "policy",
+          "case": "A",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "policy",
+          "case": "B",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": true
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "account",
+          "case": "A",
+          "change_applied": {
+            "fee_status": "reversed"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "account",
+          "case": "B",
+          "change_applied": {
+            "payment_method": "mobile money"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "A",
+          "change_applied": {
+            "site_in_jurisdiction": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "B",
+          "change_applied": {
+            "site_parcel_label": "LR-221/A"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "control",
+          "case": "B",
+          "change_applied": {
+            "applicant_phone": "0711 111 111"
+          },
+          "expected": "ISSUED",
+          "got": "HELD",
+          "correct": false
+        },
+        {
+          "change_class": "unrelated",
+          "case": "-",
+          "change_applied": null,
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        }
+      ],
+      "verdict": "FAIL"
+    },
+    "FullStandingIssuer": {
+      "cases": [
+        {
+          "change_class": "approval",
+          "case": "A",
+          "change_applied": {
+            "approval": "withdrawn"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "approval",
+          "case": "B",
+          "change_applied": {
+            "approval": "approved"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "authority",
+          "case": "A",
+          "change_applied": {
+            "approver_has_authority": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "authority",
+          "case": "B",
+          "change_applied": {
+            "approver_office": "Room 9"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "consent",
+          "case": "A",
+          "change_applied": {
+            "landowner_consent": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "consent",
+          "case": "B",
+          "change_applied": {
+            "landowner_email": "new-owner-email@example.com"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "eligibility",
+          "case": "A",
+          "change_applied": {
+            "contractor_licence": "suspended"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "eligibility",
+          "case": "B",
+          "change_applied": {
+            "contractor_address": "Plot 12"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "evidence",
+          "case": "A",
+          "change_applied": {
+            "inspection_report": "retracted"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "evidence",
+          "case": "B",
+          "change_applied": {
+            "report_file_format": "pdf/a"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "policy",
+          "case": "A",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "policy",
+          "case": "B",
+          "change_applied": {
+            "zoning_policy_version": "v2",
+            "policy_allows_permit_type": true
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "account",
+          "case": "A",
+          "change_applied": {
+            "fee_status": "reversed"
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "account",
+          "case": "B",
+          "change_applied": {
+            "payment_method": "mobile money"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "A",
+          "change_applied": {
+            "site_in_jurisdiction": false
+          },
+          "expected": "HELD",
+          "got": "HELD",
+          "correct": true
+        },
+        {
+          "change_class": "jurisdiction",
+          "case": "B",
+          "change_applied": {
+            "site_parcel_label": "LR-221/A"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "control",
+          "case": "B",
+          "change_applied": {
+            "applicant_phone": "0711 111 111"
+          },
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        },
+        {
+          "change_class": "unrelated",
+          "case": "-",
+          "change_applied": null,
+          "expected": "ISSUED",
+          "got": "ISSUED",
+          "correct": true
+        }
+      ],
+      "verdict": "PAIRED PASS"
+    }
+  },
+  "scope_and_limits": [
+    "Simulation only: a single Python process using threads, not a real networked system.",
+    "Does not test Harmonic or any vendor system.",
+    "Change classes and facts are illustrative, not drawn from a real agency's permit rules.",
+    "The race test forces one interleaving (cancel during issuance); other orderings are not exhaustively explored."
+  ]
+}

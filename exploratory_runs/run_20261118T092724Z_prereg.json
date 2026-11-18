@@ -1,0 +1,19 @@
+{
+  "run_id": "run_20261118T092724Z",
+  "written_at": "2026-11-18T09:27:24.729948+00:00",
+  "proposition": "An issuer that re-evaluates every load-bearing fact in the same locked step as issuance (a) never issues a permit after a standing-defeating change has been accepted, and (b) still issues permits whose changes are not load-bearing, without blocking unrelated permits.",
+  "falsifier": {
+    "race_test": "A run is a violation if a withdrawal was accepted before issuance was recorded. An issuer FAILS if it has more than 0 violations in 1000 runs.",
+    "paired_test": "An issuer FAILS if any Case A permit is ISSUED, or any Case B, control or unrelated permit is HELD."
+  },
+  "code_sha256": {
+    "step2_race.py": "fd954ebec2422b52bd5ccbf4e61bede304dd2e81e08ab614ec4a75ad51fc3c5d",
+    "step3_change_types.py": "b7d151989e70e24c3098dd00dd5d2e0f5e7b1a22be2ce59edad3b679b32d4317",
+    "step4_evidence.py": "9d39e1998c56f112f4c00ee2b0e4244f0f3489dfa7bf399c7f85e9dcfe828c7a"
+  },
+  "environment": {
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "machine": "AMD64"
+  }
+}
