@@ -1,0 +1,1237 @@
+{
+  "naive": {
+    "cases": [
+      {
+        "pid": 300,
+        "point": "after_determination",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "permit arrived; order unproven; official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 301,
+        "point": "after_determination",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 302,
+        "point": "before_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "permit arrived; order unproven; official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 303,
+        "point": "before_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 304,
+        "point": "after_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "permit arrived; order unproven; official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 305,
+        "point": "after_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 306,
+        "point": "after_receipt",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "issued before revocation, but official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 307,
+        "point": "after_receipt",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      }
+    ],
+    "registry_log": [
+      {
+        "pos": 1,
+        "event": "approved",
+        "pid": 300
+      },
+      {
+        "pos": 2,
+        "event": "read",
+        "pid": 300,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 3,
+        "event": "change_requested",
+        "pid": 300,
+        "change": "revoke"
+      },
+      {
+        "pos": 4,
+        "event": "revocation_effective",
+        "pid": 300,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 5,
+        "event": "approved",
+        "pid": 301
+      },
+      {
+        "pos": 6,
+        "event": "read",
+        "pid": 301,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 7,
+        "event": "change_requested",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 8,
+        "event": "change_effective",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 9,
+        "event": "approved",
+        "pid": 302
+      },
+      {
+        "pos": 10,
+        "event": "read",
+        "pid": 302,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 11,
+        "event": "change_requested",
+        "pid": 302,
+        "change": "revoke"
+      },
+      {
+        "pos": 12,
+        "event": "revocation_effective",
+        "pid": 302,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 13,
+        "event": "approved",
+        "pid": 303
+      },
+      {
+        "pos": 14,
+        "event": "read",
+        "pid": 303,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 15,
+        "event": "change_requested",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 16,
+        "event": "change_effective",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 17,
+        "event": "approved",
+        "pid": 304
+      },
+      {
+        "pos": 18,
+        "event": "read",
+        "pid": 304,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 19,
+        "event": "change_requested",
+        "pid": 304,
+        "change": "revoke"
+      },
+      {
+        "pos": 20,
+        "event": "revocation_effective",
+        "pid": 304,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 21,
+        "event": "approved",
+        "pid": 305
+      },
+      {
+        "pos": 22,
+        "event": "read",
+        "pid": 305,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 23,
+        "event": "change_requested",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 24,
+        "event": "change_effective",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 25,
+        "event": "approved",
+        "pid": 306
+      },
+      {
+        "pos": 26,
+        "event": "read",
+        "pid": 306,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 27,
+        "event": "change_requested",
+        "pid": 306,
+        "change": "revoke"
+      },
+      {
+        "pos": 28,
+        "event": "revocation_effective",
+        "pid": 306,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 29,
+        "event": "approved",
+        "pid": 307
+      },
+      {
+        "pos": 30,
+        "event": "read",
+        "pid": 307,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 31,
+        "event": "change_requested",
+        "pid": 307,
+        "change": "harmless"
+      },
+      {
+        "pos": 32,
+        "event": "change_effective",
+        "pid": 307,
+        "change": "harmless"
+      }
+    ],
+    "observer_receipts": [
+      {
+        "n": 1,
+        "pid": 300
+      },
+      {
+        "n": 2,
+        "pid": 301
+      },
+      {
+        "n": 3,
+        "pid": 302
+      },
+      {
+        "n": 4,
+        "pid": 303
+      },
+      {
+        "n": 5,
+        "pid": 304
+      },
+      {
+        "n": 6,
+        "pid": 305
+      },
+      {
+        "n": 7,
+        "pid": 306
+      },
+      {
+        "n": 8,
+        "pid": 307
+      }
+    ]
+  },
+  "recheck": {
+    "cases": [
+      {
+        "pid": 300,
+        "point": "after_determination",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "HELD",
+        "decided_by": "issuance",
+        "verdict": "PASS",
+        "reason": "held; official told WITHDRAWN"
+      },
+      {
+        "pid": 301,
+        "point": "after_determination",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 302,
+        "point": "before_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "HELD",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "held; official told WITHDRAWN"
+      },
+      {
+        "pid": 303,
+        "point": "before_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 304,
+        "point": "after_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "permit arrived; order unproven; official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 305,
+        "point": "after_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 306,
+        "point": "after_receipt",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "FAIL",
+        "reason": "issued before revocation, but official told 'WITHDRAWN'"
+      },
+      {
+        "pid": 307,
+        "point": "after_receipt",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      }
+    ],
+    "registry_log": [
+      {
+        "pos": 1,
+        "event": "approved",
+        "pid": 300
+      },
+      {
+        "pos": 2,
+        "event": "read",
+        "pid": 300,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 3,
+        "event": "change_requested",
+        "pid": 300,
+        "change": "revoke"
+      },
+      {
+        "pos": 4,
+        "event": "revocation_effective",
+        "pid": 300,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 5,
+        "event": "read",
+        "pid": 300,
+        "by": "issuance",
+        "status": "revoked",
+        "version": 2
+      },
+      {
+        "pos": 6,
+        "event": "approved",
+        "pid": 301
+      },
+      {
+        "pos": 7,
+        "event": "read",
+        "pid": 301,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 8,
+        "event": "change_requested",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 9,
+        "event": "change_effective",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 10,
+        "event": "read",
+        "pid": 301,
+        "by": "issuance",
+        "status": "approved",
+        "version": 2
+      },
+      {
+        "pos": 11,
+        "event": "read",
+        "pid": 301,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 2
+      },
+      {
+        "pos": 12,
+        "event": "approved",
+        "pid": 302
+      },
+      {
+        "pos": 13,
+        "event": "read",
+        "pid": 302,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 14,
+        "event": "read",
+        "pid": 302,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 15,
+        "event": "change_requested",
+        "pid": 302,
+        "change": "revoke"
+      },
+      {
+        "pos": 16,
+        "event": "revocation_effective",
+        "pid": 302,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 17,
+        "event": "read",
+        "pid": 302,
+        "by": "dispatch",
+        "status": "revoked",
+        "version": 2
+      },
+      {
+        "pos": 18,
+        "event": "approved",
+        "pid": 303
+      },
+      {
+        "pos": 19,
+        "event": "read",
+        "pid": 303,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 20,
+        "event": "read",
+        "pid": 303,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 21,
+        "event": "change_requested",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 22,
+        "event": "change_effective",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 23,
+        "event": "read",
+        "pid": 303,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 2
+      },
+      {
+        "pos": 24,
+        "event": "approved",
+        "pid": 304
+      },
+      {
+        "pos": 25,
+        "event": "read",
+        "pid": 304,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 26,
+        "event": "read",
+        "pid": 304,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 27,
+        "event": "read",
+        "pid": 304,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 28,
+        "event": "change_requested",
+        "pid": 304,
+        "change": "revoke"
+      },
+      {
+        "pos": 29,
+        "event": "revocation_effective",
+        "pid": 304,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 30,
+        "event": "approved",
+        "pid": 305
+      },
+      {
+        "pos": 31,
+        "event": "read",
+        "pid": 305,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 32,
+        "event": "read",
+        "pid": 305,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 33,
+        "event": "read",
+        "pid": 305,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 34,
+        "event": "change_requested",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 35,
+        "event": "change_effective",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 36,
+        "event": "approved",
+        "pid": 306
+      },
+      {
+        "pos": 37,
+        "event": "read",
+        "pid": 306,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 38,
+        "event": "read",
+        "pid": 306,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 39,
+        "event": "read",
+        "pid": 306,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 40,
+        "event": "change_requested",
+        "pid": 306,
+        "change": "revoke"
+      },
+      {
+        "pos": 41,
+        "event": "revocation_effective",
+        "pid": 306,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 42,
+        "event": "approved",
+        "pid": 307
+      },
+      {
+        "pos": 43,
+        "event": "read",
+        "pid": 307,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 44,
+        "event": "read",
+        "pid": 307,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 45,
+        "event": "read",
+        "pid": 307,
+        "by": "dispatch",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 46,
+        "event": "change_requested",
+        "pid": 307,
+        "change": "harmless"
+      },
+      {
+        "pos": 47,
+        "event": "change_effective",
+        "pid": 307,
+        "change": "harmless"
+      }
+    ],
+    "observer_receipts": [
+      {
+        "n": 1,
+        "pid": 301
+      },
+      {
+        "n": 2,
+        "pid": 303
+      },
+      {
+        "n": 3,
+        "pid": 304
+      },
+      {
+        "n": 4,
+        "pid": 305
+      },
+      {
+        "n": 5,
+        "pid": 306
+      },
+      {
+        "n": 6,
+        "pid": 307
+      }
+    ]
+  },
+  "leased": {
+    "cases": [
+      {
+        "pid": 300,
+        "point": "after_determination",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "HELD",
+        "decided_by": "issuance",
+        "verdict": "PASS",
+        "reason": "held; official told WITHDRAWN"
+      },
+      {
+        "pid": 301,
+        "point": "after_determination",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 302,
+        "point": "before_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "HELD",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "held; official told WITHDRAWN"
+      },
+      {
+        "pid": 303,
+        "point": "before_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 304,
+        "point": "after_dispatch_check",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued first; official told TOO LATE"
+      },
+      {
+        "pid": 305,
+        "point": "after_dispatch_check",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      },
+      {
+        "pid": 306,
+        "point": "after_receipt",
+        "case": "A",
+        "change": "revoke",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued first; official told TOO LATE"
+      },
+      {
+        "pid": 307,
+        "point": "after_receipt",
+        "case": "B",
+        "change": "harmless",
+        "injected": true,
+        "outcome": "ISSUED",
+        "decided_by": "dispatch",
+        "verdict": "PASS",
+        "reason": "issued"
+      }
+    ],
+    "registry_log": [
+      {
+        "pos": 1,
+        "event": "approved",
+        "pid": 300
+      },
+      {
+        "pos": 2,
+        "event": "read",
+        "pid": 300,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 3,
+        "event": "change_requested",
+        "pid": 300,
+        "change": "revoke"
+      },
+      {
+        "pos": 4,
+        "event": "revocation_effective",
+        "pid": 300,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 5,
+        "event": "read",
+        "pid": 300,
+        "by": "issuance",
+        "status": "revoked",
+        "version": 2
+      },
+      {
+        "pos": 6,
+        "event": "approved",
+        "pid": 301
+      },
+      {
+        "pos": 7,
+        "event": "read",
+        "pid": 301,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 8,
+        "event": "change_requested",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 9,
+        "event": "change_effective",
+        "pid": 301,
+        "change": "harmless"
+      },
+      {
+        "pos": 10,
+        "event": "read",
+        "pid": 301,
+        "by": "issuance",
+        "status": "approved",
+        "version": 2
+      },
+      {
+        "pos": 11,
+        "event": "lease_granted",
+        "pid": 301,
+        "version": 2
+      },
+      {
+        "pos": 12,
+        "event": "lease_released",
+        "pid": 301,
+        "delivered": true
+      },
+      {
+        "pos": 13,
+        "event": "approved",
+        "pid": 302
+      },
+      {
+        "pos": 14,
+        "event": "read",
+        "pid": 302,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 15,
+        "event": "read",
+        "pid": 302,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 16,
+        "event": "change_requested",
+        "pid": 302,
+        "change": "revoke"
+      },
+      {
+        "pos": 17,
+        "event": "revocation_effective",
+        "pid": 302,
+        "reported_to_official": "WITHDRAWN"
+      },
+      {
+        "pos": 18,
+        "event": "lease_refused",
+        "pid": 302
+      },
+      {
+        "pos": 19,
+        "event": "approved",
+        "pid": 303
+      },
+      {
+        "pos": 20,
+        "event": "read",
+        "pid": 303,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 21,
+        "event": "read",
+        "pid": 303,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 22,
+        "event": "change_requested",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 23,
+        "event": "change_effective",
+        "pid": 303,
+        "change": "harmless"
+      },
+      {
+        "pos": 24,
+        "event": "lease_granted",
+        "pid": 303,
+        "version": 2
+      },
+      {
+        "pos": 25,
+        "event": "lease_released",
+        "pid": 303,
+        "delivered": true
+      },
+      {
+        "pos": 26,
+        "event": "approved",
+        "pid": 304
+      },
+      {
+        "pos": 27,
+        "event": "read",
+        "pid": 304,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 28,
+        "event": "read",
+        "pid": 304,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 29,
+        "event": "lease_granted",
+        "pid": 304,
+        "version": 1
+      },
+      {
+        "pos": 30,
+        "event": "change_requested",
+        "pid": 304,
+        "change": "revoke"
+      },
+      {
+        "pos": 31,
+        "event": "revocation_deferred",
+        "pid": 304,
+        "reason": "dispatch lease held"
+      },
+      {
+        "pos": 32,
+        "event": "lease_released",
+        "pid": 304,
+        "delivered": true
+      },
+      {
+        "pos": 33,
+        "event": "revocation_effective",
+        "pid": 304,
+        "reported_to_official": "TOO LATE - already issued"
+      },
+      {
+        "pos": 34,
+        "event": "approved",
+        "pid": 305
+      },
+      {
+        "pos": 35,
+        "event": "read",
+        "pid": 305,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 36,
+        "event": "read",
+        "pid": 305,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 37,
+        "event": "lease_granted",
+        "pid": 305,
+        "version": 1
+      },
+      {
+        "pos": 38,
+        "event": "change_requested",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 39,
+        "event": "change_effective",
+        "pid": 305,
+        "change": "harmless"
+      },
+      {
+        "pos": 40,
+        "event": "lease_released",
+        "pid": 305,
+        "delivered": true
+      },
+      {
+        "pos": 41,
+        "event": "approved",
+        "pid": 306
+      },
+      {
+        "pos": 42,
+        "event": "read",
+        "pid": 306,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 43,
+        "event": "read",
+        "pid": 306,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 44,
+        "event": "lease_granted",
+        "pid": 306,
+        "version": 1
+      },
+      {
+        "pos": 45,
+        "event": "lease_released",
+        "pid": 306,
+        "delivered": true
+      },
+      {
+        "pos": 46,
+        "event": "change_requested",
+        "pid": 306,
+        "change": "revoke"
+      },
+      {
+        "pos": 47,
+        "event": "revocation_effective",
+        "pid": 306,
+        "reported_to_official": "TOO LATE - already issued"
+      },
+      {
+        "pos": 48,
+        "event": "approved",
+        "pid": 307
+      },
+      {
+        "pos": 49,
+        "event": "read",
+        "pid": 307,
+        "by": "gateway",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 50,
+        "event": "read",
+        "pid": 307,
+        "by": "issuance",
+        "status": "approved",
+        "version": 1
+      },
+      {
+        "pos": 51,
+        "event": "lease_granted",
+        "pid": 307,
+        "version": 1
+      },
+      {
+        "pos": 52,
+        "event": "lease_released",
+        "pid": 307,
+        "delivered": true
+      },
+      {
+        "pos": 53,
+        "event": "change_requested",
+        "pid": 307,
+        "change": "harmless"
+      },
+      {
+        "pos": 54,
+        "event": "change_effective",
+        "pid": 307,
+        "change": "harmless"
+      }
+    ],
+    "observer_receipts": [
+      {
+        "n": 1,
+        "pid": 301
+      },
+      {
+        "n": 2,
+        "pid": 303
+      },
+      {
+        "n": 3,
+        "pid": 304
+      },
+      {
+        "n": 4,
+        "pid": 305
+      },
+      {
+        "n": 5,
+        "pid": 306
+      },
+      {
+        "n": 6,
+        "pid": 307
+      }
+    ]
+  }
+}
