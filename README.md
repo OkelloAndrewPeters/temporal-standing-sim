@@ -20,6 +20,8 @@ The project does **not** test Moral Clarity AI's Harmonic system or any vendor p
 | `step2_race.py` | Step 2: a withdrawal arrives *during* issuance (race condition) |
 | `step3_change_types.py` | Step 3: eight kinds of change, each as a Case A / Case B pair |
 | `step4_evidence.py` | Runs Steps 2–3 and saves fingerprinted evidence |
+| `step5_receiver.py` | Step 5: a receiver of five separate processes, judged by whether the permit reaches an independent observer (exploratory) |
+| `step6_faults.py` | Step 6: duplicates, lost acknowledgements, a crash and a freeze, scripted deterministically (exploratory) |
 | `PREREGISTRATION.md` | Claim and failure criteria, committed before the evidence run |
 | `evidence/` | Confirmatory evidence run |
 | `exploratory_runs/` | Runs made during development (disclosed, not confirmatory) |
@@ -45,12 +47,22 @@ python step4_evidence.py
 
 Results matched on Linux and Windows.
 
+### Exploratory: distributed receiver (Steps 5–6)
+
+These were developed after the pre-registered run and are not yet pre-registered.
+
+6. **Re-checking across separate services still leaves the gap.** With five separate processes and only the applicant's inbox counting as irreversible, a design that re-checks before dispatch failed when the revocation landed between its check and the send.
+7. **The authority registry must remember what is already out.** A dispatch lease passed the clean cases only after the registry permanently recorded deliveries. Without that, a later withdrawal was answered "WITHDRAWN" for a permit the applicant already held.
+8. **A lease alone fails under faults.** Duplicates and lost acknowledgements produced two permits, and after a crash the sender trusted an expired lease. Idempotency keys and re-checking the lease fixed those.
+9. **Enforcement has to sit at the irreversible point.** When the sender froze between checking its lease and sending, the lease expired, the official was told "WITHDRAWN", and the permit arrived anyway. Only a design where the delivery channel itself checks the lease with the registry at the moment of delivery passed all four faults.
+
 ## What this suggests agencies should ask vendors for
 
 1. A list of every fact an action's authority depends on.
 2. Evidence that each fact is re-checked at the moment of action, not only when the action is queued.
 3. Where the "point of no return" is, with proof that a cancel accepted before it always stops the action, and a cancel after it always gets an honest "too late."
 4. Paired results (a change that should block, and one that shouldn't) for each kind of change, repeated many times, with failure rates.
+5. Whether the delivery point itself checks authority at the moment of delivery. If it doesn't, the vendor should state how long a slow or frozen component could still deliver after a revocation.
 
 ## Verify the evidence
 
@@ -66,6 +78,7 @@ Then compare the code hashes in the `_prereg.json` file against the files in the
 - This is a simulation: a single Python process with threads, not a real networked system.
 - The change classes and facts are illustrative, not taken from a real agency's rules.
 - The race test forces one ordering (a cancel during issuance). Other orderings aren't explored exhaustively.
+- Step 6 scripts faults in a single process so each one happens at exactly the same moment every time. Step 5 covers real separate processes, but without faults.
 - Passing here shows a design pattern works in this model. It does not prove any real system is safe.
 
 ## Author
